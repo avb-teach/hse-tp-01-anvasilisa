@@ -25,13 +25,12 @@ if "--max_depth" not in args:
     input_dir = Path(args[0])
     output_dir = Path(args[1])
 else:
-    max_depth = int(args[1])
-    input_dir = Path(args[2])
-    output_dir = Path(args[3])
-
+    max_depth = int(args[3])
+    input_dir = Path(args[0])
+    output_dir = Path(args[1])
 
 output_dir.mkdir(parents=True, exist_ok=True)
-
+##
 for root, i, files in os.walk(input_dir):
 
     rel_path = os.path.relpath(root, input_dir)
